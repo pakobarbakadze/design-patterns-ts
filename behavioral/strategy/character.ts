@@ -5,7 +5,7 @@ import {
   WeaponBehavior,
 } from "./weapon-behavior";
 
-export abstract class Character {
+abstract class Character {
   protected weaponBehavior: WeaponBehavior | null = null;
 
   public fight(): void {
@@ -17,28 +17,30 @@ export abstract class Character {
   }
 }
 
-export class King extends Character {
+class King extends Character {
   constructor() {
     super();
     this.weaponBehavior = new SwordBehavior();
   }
 }
 
-export class Queen extends Character {
+class Queen extends Character {
   constructor() {
     super();
     this.weaponBehavior = new BowAndArrowBehavior();
   }
 }
-export class Knight extends Character {
+class Knight extends Character {
   constructor() {
     super();
     this.weaponBehavior = new SwordBehavior();
   }
 }
-export class Troll extends Character {
+class Troll extends Character {
   constructor() {
     super();
     this.weaponBehavior = new AxeBehavior();
   }
 }
+
+export { King, Queen, Knight, Troll };
