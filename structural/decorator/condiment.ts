@@ -1,17 +1,13 @@
 import { Beverage } from "./beverage";
 
 abstract class CondimentDecorator extends Beverage {
-  protected beverage: Beverage;
-
-  constructor(beverage: Beverage) {
-    super();
-    this.beverage = beverage;
-  }
+  protected beverage!: Beverage;
 }
 
 class Mocha extends CondimentDecorator {
   constructor(beverage: Beverage) {
-    super(beverage);
+    super();
+    this.beverage = beverage;
   }
 
   public getDescription(): string {
@@ -25,7 +21,8 @@ class Mocha extends CondimentDecorator {
 
 class Milk extends CondimentDecorator {
   constructor(beverage: Beverage) {
-    super(beverage);
+    super();
+    this.beverage = beverage;
   }
 
   public getDescription(): string {
