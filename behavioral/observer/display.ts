@@ -48,4 +48,5 @@ class ForecastDisplay implements Observer, DisplayElement {
     console.log("Forecast: Watch out for cooler, rainy weather");
   }
 }
+
 export { Observer, CurrentConditionsDisplay, ForecastDisplay };
