@@ -1,4 +1,10 @@
-import { ChicagoStyleCheesePizza, NYStyleCheesePizza, Pizza } from "./pizza";
+import {
+  ChicagoStyleCheesePizza,
+  ChicagoStylePepperoniPizza,
+  NYStyleCheesePizza,
+  NYStylePepperoniPizza,
+  Pizza,
+} from "./pizza";
 
 export enum PizzaType {
   CHEESE,
@@ -26,6 +32,8 @@ class NYPizzaStore extends PizzaStore {
   protected createPizza(type: PizzaType): Pizza {
     if (type === PizzaType.CHEESE) {
       return new NYStyleCheesePizza();
+    } else if (type === PizzaType.PEPPERONI) {
+      return new NYStylePepperoniPizza();
     } else return new Pizza();
   }
 }
@@ -34,6 +42,8 @@ class ChicagoPizzaStore extends PizzaStore {
   protected createPizza(type: PizzaType): Pizza {
     if (type === PizzaType.CHEESE) {
       return new ChicagoStyleCheesePizza();
+    } else if (type === PizzaType.PEPPERONI) {
+      return new ChicagoStylePepperoniPizza();
     } else return new Pizza();
   }
 }

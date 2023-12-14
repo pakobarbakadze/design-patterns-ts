@@ -40,6 +40,17 @@ class NYStyleCheesePizza extends Pizza {
   }
 }
 
+class NYStylePepperoniPizza extends Pizza {
+  constructor() {
+    super();
+    this.name = "NY Style Pepperoni Pizza";
+    this.dough = "Thin Crust Dough";
+    this.sauce = "Marinara Sauce";
+
+    this.toppings.push("Pepperoni");
+  }
+}
+
 class ChicagoStyleCheesePizza extends Pizza {
   constructor() {
     super();
@@ -55,4 +66,25 @@ class ChicagoStyleCheesePizza extends Pizza {
   }
 }
 
-export { Pizza, NYStyleCheesePizza, ChicagoStyleCheesePizza };
+class ChicagoStylePepperoniPizza extends Pizza {
+  constructor() {
+    super();
+    this.name = "Chicago Style Pepperoni Pizza";
+    this.dough = "Extra Thick Crust Dough";
+    this.sauce = "Plum Tomato Sauce";
+
+    this.toppings.push("Pepperoni");
+  }
+
+  public cut(): void {
+    console.log("Cutting the pizza into square slices");
+  }
+}
+
+export {
+  Pizza,
+  NYStyleCheesePizza,
+  NYStylePepperoniPizza,
+  ChicagoStylePepperoniPizza,
+  ChicagoStyleCheesePizza,
+};
