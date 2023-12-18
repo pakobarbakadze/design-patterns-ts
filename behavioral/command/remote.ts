@@ -24,7 +24,7 @@ class RemoteControl {
   }
 
   public offButtonWasPushed(slot: number): void {
-    this.onCommands[slot].execute();
+    this.offCommands[slot].execute();
   }
 
   public toString(): string {

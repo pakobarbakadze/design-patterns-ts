@@ -58,6 +58,18 @@ class GarageDoorCloseCommand implements Command {
   }
 }
 
+class MacroCommand implements Command {
+  commands: Command[];
+
+  constructor(commands: Command[]) {
+    this.commands = commands;
+  }
+
+  execute(): void {
+    this.commands.forEach((command) => command.execute());
+  }
+}
+
 export {
   Command,
   NoCommand,
@@ -66,4 +78,5 @@ export {
   LightOffCommand,
   GarageDoorOpenCommand,
   GarageDoorCloseCommand,
+  MacroCommand,
 };
